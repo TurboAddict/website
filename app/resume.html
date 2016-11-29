@@ -20,10 +20,8 @@
             <tr ng-repeat="object in objectList | filter: {type: 'project'}">
             <td>{{object.project}}</td></tr>
         </table>
-        <button class="btn btn-primary" ng-click="adminPage()">Admin Page</button>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="controllers/controller.js"></script>
     <navbar></navbar>
 </body>
 </html>

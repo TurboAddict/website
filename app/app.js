@@ -11,9 +11,9 @@ sampleApp.config(['$routeProvider',
 	templateUrl: 'resume.html',
 	controller: 'ResumeController'
       }).
-      when('/ShowOrders', {
-	templateUrl: 'templates/show_orders.html',
-	controller: 'ShowOrdersController'
+      when('/', {
+	templateUrl: 'main.html',
+	controller: 'MainController'
       }).
       otherwise({
 	redirectTo: '/'
@@ -30,13 +30,16 @@ sampleApp.controller('ResumeController', ['$scope', '$http', function($scope, $h
         $scope.objectList = response;
         console.log(response);
     });
-
-
 }]);
 
 
-sampleApp.controller('ShowOrdersController', function($scope) {
+sampleApp.controller('MainController', ['$scope', '$http', function($scope, $http) {
 
-	$scope.message = 'This is Show orders screen';
-
-});
+	$scope.message = 'This is Add new order screen';
+    console.log("Hello World from controller");
+    $http.get('/app').success(function(response, type) {
+        console.log("I got the data I requested.");
+        $scope.objectList = response;
+        console.log(response);
+    });
+}]);
