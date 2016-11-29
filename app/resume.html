@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <title>Max Ru's Website</title>
+</head>
+<body>
+    <div class="container" ng-controller="ResumeController">
+        <table class="table">
+            <tr><th>Education</th></tr>
+            <tr ng-repeat="object in objectList | filter: {type: 'edu'}">
+            <td>{{object.school}} {{object.last_year}}</td></tr>
+            <tr><th>Skills</th></tr>
+            <tr ng-repeat="object in objectList | filter: {type: 'skill'}">
+            <td>{{object.skill}}</td></tr>
+            <tr><th>Projects</th></tr>
+            <tr ng-repeat="object in objectList | filter: {type: 'project'}">
+            <td>{{object.project}}</td></tr>
+        </table>
+        <button class="btn btn-primary" ng-click="adminPage()">Admin Page</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="controllers/controller.js"></script>
+    <navbar></navbar>
+</body>
+</html>
