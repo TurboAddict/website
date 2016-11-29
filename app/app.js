@@ -25,7 +25,7 @@ sampleApp.controller('ResumeController', ['$scope', '$http', function($scope, $h
 
 	$scope.message = 'This is Add new order screen';
     console.log("Hello World from controller");
-    $http.get('/Website').success(function(response, type) {
+    $http.get('/app').success(function(response, type) {
         console.log("I got the data I requested.");
         $scope.objectList = response;
         console.log(response);
