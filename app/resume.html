@@ -12,7 +12,7 @@
         <table class="table">
             <tr><th>Education</th></tr>
             <tr ng-repeat="object in objectList | filter: {type: 'edu'}">
-            <td>{{object.school}} {{object.last_year}}</td></tr>
+            <td>{{object.school}}, {{object.last_year}}  <br> {{object.degree}}</td></tr>
             <tr><th>Skills</th></tr>
             <tr ng-repeat="object in objectList | filter: {type: 'skill'}">
             <td>{{object.skill}}</td></tr>

@@ -15,6 +15,14 @@ sampleApp.config(['$routeProvider',
 	templateUrl: 'main.html',
 	controller: 'MainController'
       }).
+      when('/Login', {
+	templateUrl: 'login.html',
+	controller: 'LoginController'
+      }).
+      when('/Contact', {
+	templateUrl: 'contact.html',
+	controller: 'ContactController'
+      }).
       otherwise({
 	redirectTo: '/'
       });
@@ -22,24 +30,34 @@ sampleApp.config(['$routeProvider',
 
 
 sampleApp.controller('ResumeController', ['$scope', '$http', function($scope, $http) {
-
-	$scope.message = 'This is Add new order screen';
     console.log("Hello World from controller");
     $http.get('/app').success(function(response, type) {
         console.log("I got the data I requested.");
         $scope.objectList = response;
-        console.log(response);
     });
 }]);
 
 
 sampleApp.controller('MainController', ['$scope', '$http', function($scope, $http) {
-
-	$scope.message = 'This is Add new order screen';
     console.log("Hello World from controller");
     $http.get('/app').success(function(response, type) {
         console.log("I got the data I requested.");
         $scope.objectList = response;
-        console.log(response);
+    });
+}]);
+
+sampleApp.controller('ContactController', ['$scope', '$http', function($scope, $http) {
+    console.log("Hello World from controller");
+    $http.get('/app').success(function(response, type) {
+        console.log("I got the data I requested.");
+        $scope.objectList = response;
+    });
+}]);
+
+sampleApp.controller('LoginController', ['$scope', '$http', function($scope, $http) {
+    console.log("Hello World from controller");
+    $http.get('/app').success(function(response, type) {
+        console.log("I got the data I requested.");
+        $scope.objectList = response;
     });
 }]);
