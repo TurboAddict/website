@@ -3,9 +3,9 @@ var app = express();
 var mongojs = require('mongojs');
 var db = mongojs('resume', ['resume']);
 
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/app"));
 
-app.get('/Website', function(req, res) {
+app.get('/app', function(req, res) {
     console.log("I received a GET request");
 
     db.resume.find(function(err, docs) {
